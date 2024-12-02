@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 
-class Gallery extends Component {
+class GalleryComponent1 extends Component {
   state = {
     lupinFilms: [],
   };
@@ -33,7 +33,7 @@ class Gallery extends Component {
         {this.state.lupinFilms.map((film) => (
           <Col key={film.imdbID}>
             <Card style={{ width: "16rem" }}>
-              <Card.Img src={film.Poster} />
+              <Card.Img className="img.fluid" src={film.Poster} />
             </Card>
           </Col>
         ))}
@@ -41,4 +41,4 @@ class Gallery extends Component {
     );
   }
 }
-export default Gallery;
+export default GalleryComponent1;

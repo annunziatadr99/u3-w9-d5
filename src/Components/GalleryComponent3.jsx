@@ -1,12 +1,12 @@
 import { Component } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 
-class Gallery extends Component {
+class GalleryComponent3 extends Component {
   state = {
-    lupinFilms: [],
+    herculesFilms: [],
   };
-  getLupin = () => {
-    fetch("http://www.omdbapi.com/?apikey=25cea59a&s=lupin")
+  getHercules = () => {
+    fetch("http://www.omdbapi.com/?apikey=25cea59a&s=hercules")
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
@@ -15,8 +15,8 @@ class Gallery extends Component {
         }
       })
       .then((data) => {
-        console.log("dovrebbe arrivare risultato di lupin", data);
-        this.setState({ lupinFilms: data.Search.slice(0, 6) });
+        console.log("dovrebbe arrivare risultato di hercules", data);
+        this.setState({ herculesFilms: data.Search.slice(0, 6) });
       })
 
       .catch((error) => {
@@ -24,13 +24,13 @@ class Gallery extends Component {
       });
   };
   componentDidMount() {
-    this.getLupin();
+    this.getHercules();
   }
   render() {
     console.log("verifica risultato");
     return (
-      <Row xs={1} sm={2} md={3} lg={6} xl={6} className="mt-5">
-        {this.state.lupinFilms.map((film) => (
+      <Row xs={1} sm={2} md={3} lg={6} xl={6} className="mt-5 ">
+        {this.state.herculesFilms.map((film) => (
           <Col key={film.imdbID}>
             <Card style={{ width: "16rem" }}>
               <Card.Img src={film.Poster} />
@@ -41,4 +41,4 @@ class Gallery extends Component {
     );
   }
 }
-export default Gallery;
+export default GalleryComponent3;

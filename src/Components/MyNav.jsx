@@ -3,7 +3,7 @@ import { Search } from "react-bootstrap-icons";
 import { BellFill } from "react-bootstrap-icons";
 import { PersonFill } from "react-bootstrap-icons";
 const MyNav = () => (
-  <Navbar expand="lg" bg="dark" data-bs-theme="dark">
+  <Navbar expand="lg" data-bs-theme="dark">
     <Container fluid>
       <Navbar.Brand href="#home">
         <img
